@@ -1,4 +1,5 @@
     //coleccion para ordenes
+    import mongoose, { mongo } from "mongoose";
 
     const orderScheme = new mongoose.Schema({
 
