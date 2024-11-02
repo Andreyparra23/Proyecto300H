@@ -1,8 +1,11 @@
 import express from "express";
 import dotenv from "dotenv";
+import { connectionMongo } from "./src/config/dataBase.js";
 
 const app = express();
 dotenv.config();
+connectionMongo ();
+
 
 // falta linea de codigo mongo
 
