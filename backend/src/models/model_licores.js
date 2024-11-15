@@ -1,7 +1,8 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 const productScheme = new mongoose.Schema({
-    Image: {type: String, required: true}, //image es el nombre que nosotros le ponemos a esa "variable", caracteristicas de la info que quieren guardar
+
+    Image: {type: String, required: true}, 
     name: {type: String, required: true},
     category: {type: String, required: false},
     price: {type: Number, required: true},
@@ -9,4 +10,3 @@ const productScheme = new mongoose.Schema({
     });
 
     export const productModel = mongoose.model('product', productScheme);
-
