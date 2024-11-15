@@ -1,16 +1,20 @@
 import express from "express";
 import dotenv from "dotenv";
 import { connectionMongo } from "./src/config/dataBase.js";
+import { productRouter } from "./src/routes/product.routes.js";
+
 
 const app = express();
 dotenv.config();
 connectionMongo ();
 
+app.use(express.json);
+app.use('/productos', productRouter);
+ 
 
-// falta linea de codigo mongo
 
-const port = process.env. PORT;
+const port = process.env.PORT;
 
 app.listen (port, ()=> {
-    console.log("se esta ejecutando el puerto 3000")
-});
+    console.log("se esta ejecutando el puerto " + port)
+});  
