@@ -8,7 +8,7 @@ const app = express();
 dotenv.config();
 connectionMongo ();
 
-app.use(express.json);
+app.use(express.json()); 
 app.use('/productos', productRouter);
  
 
