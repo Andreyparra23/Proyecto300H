@@ -1,13 +1,13 @@
     //coleccion para ordenes
-    import mongoose, { mongo } from "mongoose";
+    import mongoose, { mongo, Schema } from "mongoose";
 
     const orderScheme = new mongoose.Schema({
 
-        product: {type: String, required: true},//id del producto
-        user: {type: String, required: true},//id usuario
-        orderDate:{type: Date, required: true},//fecha de la orden
+        product: [{type: mongoose.Schema.Types.ObjectId, ref:"product",required: true}],//id del producto//[]arreglo de datos
+        user: {type: mongoose.Schema.Types.ObjectId, ref:"user", required: true},//id usuario
+        orderDate:{type: Date, default:Date.now},//fecha de la orden
         orderTotal: {type: Number, required: true}
 
-    })
+    });
 
     export const orderModel = mongoose.model("order", orderScheme);//link de exportacion
