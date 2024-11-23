@@ -1,4 +1,5 @@
-import { getProduct, postProduct, deleteProductById, putProductById } from "../controllers/product.controller.js";
+
+import { getProduct, postProduct, deleteProductById, putProductById, getProductByCategory } from "../controllers/product.controller.js";
 import express from "express";
 
 export const productRouter = express.Router();
@@ -14,3 +15,6 @@ productRouter.put('/actualizar/:ID', putProductById);
 
 //RUTA DELETE
 productRouter.delete('/eliminar/:ID',deleteProductById);
+
+//RUTA GET POR CATEGORIA
+productRouter.get('/obtener/:categoriadellicor', getProductByCategory)
