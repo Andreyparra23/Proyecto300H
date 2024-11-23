@@ -1,0 +1,13 @@
+import { getOrder, postOrder, deleteOrderById } from "../controllers/order.controller.js";
+import express from "express";
+
+export const orderRouter = express.Router();
+
+//RUTA GET
+orderRouter.get('/obtener', getOrder);
+
+//RUTA POST
+orderRouter.post('/crear', postOrder);
+
+//RUTA DELETE
+orderRouter.delete('/eliminar/:id',deleteOrderById);
