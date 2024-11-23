@@ -1,9 +1,12 @@
 import mongoose from "mongoose";
 
 const productScheme = new mongoose.Schema({
-    Image: {type: String, required: true}, //image es el nombre que nosotros le ponemos a esa "variable", caracteristicas de la info que quieren guardar
+
+    Image: {type: String, required: true}, 
     name: {type: String, required: true},
-    category: {type: String, required: false},
+    category: {type:  String, 
+        enum: ['aguardiente', 'ron', 'x'],  
+        required: false},
     price: {type: Number, required: true},
     description: {type: String}, 
     });
