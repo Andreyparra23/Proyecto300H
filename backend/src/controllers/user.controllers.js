@@ -1,15 +1,15 @@
 
-import { userModel } from "../models/users.model.js";
+import { userModel } from "../models/usuarios.model.js";
 import bcrypt from "bcryptjs";
 
 
 export const createUser = async(req, res)=>{
     
     try {
-        const {fullName, email, password, role} = req.body
+        const {fullname, email, password, role} = req.body
         const codedPassword = await bcrypt.hash(password, 10);
         const newUser = await userModel.create({
-            fullName,
+            fullname,
             email,
             password:codedPassword,
             role
@@ -24,7 +24,7 @@ export const createUser = async(req, res)=>{
     } catch (error) {
         return res.status(400).json({
             mensaje:"Ocurrio un error al crear un usuario",
-            problema:error || error.message
+            problema:  error.message
 
         });
     }
@@ -44,7 +44,8 @@ export const showUsers = async(req, res) =>{
         }
 
         return res.status(200).json({
-            mensaje:"Se encontraron usuarios almacenados"
+            mensaje:"Se encontraron usuarios almacenados",
+            users
         })
 
 
@@ -61,4 +62,4 @@ export const showUsers = async(req, res) =>{
     
      }
 
-}
+} //AGREGAR CONTROLADOR PARA ELIMINAR USUARIOS 
