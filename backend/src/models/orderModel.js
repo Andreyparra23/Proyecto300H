@@ -11,3 +11,4 @@
     });
 
     export const orderModel = mongoose.model("order", orderScheme);//link de exportacion
+

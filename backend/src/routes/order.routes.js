@@ -1,5 +1,6 @@
 import { getOrder, postOrder, deleteOrderById } from "../controllers/order.controller.js";
 import express from "express";
+import auth from "../middleware/auth.js";
 
 export const orderRouter = express.Router();
 

@@ -1,6 +1,7 @@
 
 import { getProduct, postProduct, deleteProductById, putProductById, getProductByCategory } from "../controllers/product.controller.js";
 import express from "express";
+import auth from "../middleware/auth.js";
 
 export const productRouter = express.Router();
 
@@ -8,13 +9,14 @@ export const productRouter = express.Router();
 productRouter.get('/obtener', getProduct);
 
 //RUTA POST
-productRouter.post('/crear', postProduct);
+productRouter.post('/crear',auth("administrador"), postProduct);
+
 
 //RUTA PUT
-productRouter.put('/actualizar/:ID', putProductById);
+productRouter.put('/actualizar/:ID',auth("administrador"), putProductById);
 
 //RUTA DELETE
-productRouter.delete('/eliminar/:ID',deleteProductById);
+productRouter.delete('/eliminar/:ID',auth("administrador"),deleteProductById);
 
 //RUTA GET POR CATEGORIA
 productRouter.get('/obtener/:categoriadellicor', getProductByCategory)

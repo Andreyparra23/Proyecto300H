@@ -13,7 +13,7 @@ return new Promise((resolve, reject) => {
         if(error){
             reject(new Error('error al generar el JWT' + error.message));
         } else {
-            resolve ();
+            resolve (token);
         }
     })
 })
