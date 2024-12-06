@@ -1,0 +1,15 @@
+html, body {
+    height: 100%;
+  }
+
+  /* El cuerpo del contenido debe ocupar el espacio restante, empujando el footer hacia abajo */
+  .content {
+    min-height: 100vh; /* Vista completa */
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* El footer se posiciona al final del contenedor */
+  footer {
+    margin-top: auto;
+  }
