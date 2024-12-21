@@ -9,9 +9,14 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav w-100 justify-content-evenly">
         <a class="nav-link" routerLink="/">INICIO</a>
-        <a class="nav-link" routerLink="login">INGRESAR</a>
-        <a class="nav-link" routerLink="registro">REGISTRARSE</a>
-        <a class="nav-link" routerLink="productos">PRODUCTOS</a>
+        <a class="nav-link" routerLink="/login">INGRESAR</a>
+        <a class="nav-link" routerLink="/registro">REGISTRARSE</a>
+        <a class="nav-link" routerLink="/productos">PRODUCTOS</a>
+
+   <!--      <a class="nav-link" routerLink="productos">PRODUCTOS</a>  hacer boton de cierre de sesion,  -->
+
+<button *ngIf="islogged" class="btn btn-info" (click)="handleLogout()">Cerrar sesión</button>
+
       </div>
     </div>
   </div>

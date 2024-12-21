@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { NavBarComponent } from '../../componentes/nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-not-found',
-  imports: [],
+  imports: [NavBarComponent],
   templateUrl: './not-found.component.html',
   styleUrl: './not-found.component.css'
 })
