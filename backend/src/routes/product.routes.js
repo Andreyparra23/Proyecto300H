@@ -1,5 +1,5 @@
 
-import { getProduct, postProduct, deleteProductById, putProductById, getProductByCategory } from "../controllers/product.controller.js";
+import { getProduct, postProduct, deleteProductById, putProductById, } from "../controllers/product.controller.js";
 import express from "express";
 import auth from "../middleware/auth.js";
 
@@ -18,5 +18,3 @@ productRouter.put('/actualizar/:ID',auth("administrador"), putProductById);
 //RUTA DELETE
 productRouter.delete('/eliminar/:ID',auth("administrador"),deleteProductById);
 
-//RUTA GET POR CATEGORIA
-productRouter.get('/obtener/:categoriadellicor', getProductByCategory)
